@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prediction</title>
+
+    <!-- Font Icon -->
+   
+    <!-- Main css -->
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="static/images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Predictions for the English Premier League </h2>
+                        <p></p>
+                    </div>
+    
+                </div>
+                <form action="#">
+                 <label for="cars">Home:</label>
+                 <select id="cars" name="cars">
+  <option value="volvo">Liverpol</option>
+  <option value="saab">Man. city</option>
+  <option value="fiat">Leicester city</option>
+  <option value="audi">Chelsea</option>
+  <option value="volvo">Man. United</option>
+  <option value="saab">Wolves</option>
+  <option value="fiat">Sheffield United</option>
+  <option value="audi">Tottenham</option>
+  <option value="fiat">Arsenal</option>
+  <option value="audi">Burnley</option>
+    <option value="fiat">Crystal Palace</option>
+  <option value="audi">NewCastle</option>
+</select> 
+<label for="cars">Away:</label>
+                 <select id="cars" name="cars">
+  <option value="volvo">Liverpol</option>
+  <option value="saab">Man. city</option>
+  <option value="fiat">Leicester city</option>
+  <option value="audi">Chelsea</option>
+  <option value="volvo">Man. United</option>
+  <option value="saab">Wolves</option>
+  <option value="fiat">Sheffield United</option>
+  <option value="audi">Tottenham</option>
+  <option value="fiat">Arsenal</option>
+  <option value="audi">Burnley</option>
+    <option value="fiat">Crystal Palace</option>
+  <option value="audi">NewCastle</option>
+</select> 
+</form>
+   
+
+ 
+
+
+                <div class="signup-form">
+                    <form action='/predict' method="post" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                
+                                <div class="form-input">
+                                    <label for="3" class="required" placeholder="Half time home goals">Half time Home Goal</label>
+                                    <input type="text" name="3" id="3" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="4" class="required" placeholder="half time away goals">Half Time Away Goal</label>
+                                    <input type="text" name="4" id="4" />
+                                </div>
+                                
+                                <div class="form-input">
+                                    <label for="6" class="required" placeholder="home team shots">Home team shots</label>
+                                    <input type="text" name="6" id="6" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="7" class="required" placeholder="Away team shots">Away team shots</label>
+                                    <input type="text" name="7" id="7" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="8" class="required" placeholder="home team shots on target">Home team shots at target</label>
+                                    <input type="text" name="8" id="8" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="9" class="required" placeholder="Away team shots in target">Away Team shot at target</label>
+                                    <input type="text" name="9" id="9" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="form-input">
+                                    <label for="10" class="required" placeholder="home foul">Home team foul</label>
+                                    <input type="text" name="10" id="10" />
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-input">
+                                    <label for="11" class="required" placeholder="Away foul">Away team foulF</label>
+                                    <input type="text" name="11" id="11" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="12" placeholder="home corners">Home team corner</label>
+                                    <input type="text" name="12" id="12" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="13" placeholder="Away corners">Away team corner</label>
+                                    <input type="text" name="13" id="13" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="14" placeholder="home yellow">Home yellow card</label>
+                                    <input type="text" name="14" id="14" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="15" placeholder="yellow away">Away yellow card</label>
+                                    <input type="text" name="15" id="15" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="16" placeholder="home red">Home red card</label>
+                                    <input type="text" name="16" id="16" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="17" placeholder="Away Red">Away red card</label>
+                                    <input type="text" name="17" id="17" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-large waves-effect waves-light orange">Results</button>
+                    </form>
+                </div>
+                
+      <br>
+        {{pred}}<br>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/nouislider/nouislider.min.js"></script>
+    <script src="static/vendor/wnumb/wNumb.js"></script>
+    <script src="static/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="static/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
