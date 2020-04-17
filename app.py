@@ -1,7 +1,9 @@
-from flask import Flask, render_template, session, redirect, request
-import pickle
+from flask import Flask, render_template, session, redirect, url_for, session
 import numpy as np
-
+from flask_wtf import FlaskForm
+from wtforms import TextField,SubmitField
+from wtforms.validators import NumberRange
+import joblib
 
 
 
